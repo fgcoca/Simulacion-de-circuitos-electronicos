@@ -1,0 +1,5 @@
+Circuit: * E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\Tipos\E5-temperatura-1N4007.asc
+
+Error on line 1561 : .noise vd1 v1 dec 10 10hz 150hz
+	Bad .noise syntax: .noise V(<out>[,<ref>]) <src> <oct, dec, lin> Npoints StartFreq <EndFreq>
+Fatal Error: Syntax error in .NOISE command.

@@ -1,0 +1,22 @@
+Circuit: * E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\E1-captura\Draft2.asc
+
+V1: Removing PWL point (0.001,10)
+.OP point found by inspection.
+
+Date: Mon Jul 20 19:35:06 2020
+Total elapsed time: 0.263 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1080
+traniter = 1080
+tranpoints = 541
+accept = 539
+rejected = 2
+matrix size = 4
+fillins = 0
+solver = Normal
+Matrix Compiler1: 100 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler2: off  [0.0]/0.1/0.0
+
