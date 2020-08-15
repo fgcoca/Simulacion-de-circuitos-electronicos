@@ -1,0 +1,84 @@
+Circuit: * E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\Fourier\E5-Reconstruccion.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 1.08884
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 1.03122
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 1.01823
+vernier = 0.00520833
+vernier = 0.00260417
+Gmin = 1.01162
+vernier = 0.00347222
+vernier = 0.00173611
+vernier = 0.00231481
+vernier = 0.00115741
+Gmin = 1.00877
+vernier = 0.00154321
+vernier = 0.000771604
+Gmin = 1.00673
+vernier = 0.00102881
+vernier = 0.000514403
+vernier = 0.00068587
+Gmin = 1.00553
+vernier = 0.000514403
+vernier = 0.00068587
+vernier = 0.000514402
+Gmin = 1.00475
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+N-Period=1
+Fourier components of V(salida)
+DC component:2.50477
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	3.182e+00	1.000e+00	   -0.96°	    0.00°
+    2   	2.000e+03	9.991e-03	3.139e-03	   88.07°	   89.02°
+    3   	3.000e+03	1.060e+00	3.331e-01	   -2.51°	   -1.55°
+    4   	4.000e+03	9.980e-03	3.136e-03	   86.19°	   87.15°
+    5   	5.000e+03	6.349e-01	1.995e-01	   -3.22°	   -2.27°
+    6   	6.000e+03	9.960e-03	3.130e-03	   85.60°	   86.55°
+    7   	7.000e+03	4.525e-01	1.422e-01	   -3.83°	   -2.87°
+    8   	8.000e+03	9.932e-03	3.121e-03	   84.87°	   85.83°
+    9   	9.000e+03	3.509e-01	1.103e-01	   -4.31°	   -3.36°
+   10   	1.000e+04	9.902e-03	3.112e-03	   85.12°	   86.08°
+Total Harmonic Distortion: 42.799853%(42.799857%)
+
+
+
+Date: Sat Aug 15 19:12:02 2020
+Total elapsed time: 8.600 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 8930
+traniter = 3030
+tranpoints = 1516
+accept = 1213
+rejected = 303
+matrix size = 182
+fillins = 315
+solver = Normal
+Thread vector: 117.0/66.0[8] 29.8/17.8[8] 21.0/14.0[8] 2.2/8.8[1]  2592/500
+Matrix Compiler1: 26.19 KB object code size  15.0/7.2/[3.1]
+Matrix Compiler2: 24.88 KB object code size  6.5/9.8/[2.3]
+

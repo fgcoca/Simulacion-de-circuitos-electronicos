@@ -1,0 +1,40 @@
+Circuit: * E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\Elementos\Draft3.asc
+
+.OP point found by inspection.
+N-Period=1
+Fourier components of V(salida)
+DC component:2.505
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	1.000e+03	3.183e+00	1.000e+00	   -0.36°	    0.00°
+    2   	2.000e+03	1.000e-02	3.142e-03	   89.28°	   89.64°
+    3   	3.000e+03	1.061e+00	3.333e-01	   -1.08°	   -0.72°
+    4   	4.000e+03	1.000e-02	3.141e-03	   88.56°	   88.92°
+    5   	5.000e+03	6.365e-01	2.000e-01	   -1.80°	   -1.44°
+    6   	6.000e+03	9.999e-03	3.141e-03	   87.84°	   88.20°
+    7   	7.000e+03	4.546e-01	1.428e-01	   -2.52°	   -2.16°
+    8   	8.000e+03	9.998e-03	3.141e-03	   87.12°	   87.48°
+    9   	9.000e+03	3.535e-01	1.111e-01	   -3.24°	   -2.88°
+   10   	1.000e+04	9.997e-03	3.141e-03	   86.40°	   86.76°
+Total Harmonic Distortion: 42.879828%(48.172792%)
+
+
+
+Date: Sat Aug 15 17:04:01 2020
+Total elapsed time: 0.272 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2272
+traniter = 2272
+tranpoints = 1137
+accept = 1118
+rejected = 19
+matrix size = 2
+fillins = 0
+solver = Normal
+Matrix Compiler1: 36 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler2: 96 bytes object code size  0.1/0.1/[0.0]
+

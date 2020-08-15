@@ -1,0 +1,40 @@
+Circuit: * E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\Fourier\E1-Rectif-media-onda.asc
+
+.OP point found by inspection.
+N-Period=1
+Fourier components of V(sal)
+DC component:6.02324
+
+Harmonic	Frequency	 Fourier 	Normalized	 Phase  	Normalized
+ Number 	  [Hz]   	Component	 Component	[degree]	Phase [deg]
+    1   	5.000e+01	9.546e+00	1.000e+00	    0.17°	    0.00°
+    2   	1.000e+02	4.208e+00	4.409e-01	  -89.67°	  -89.84°
+    3   	1.500e+02	1.301e-01	1.362e-02	  179.03°	  178.86°
+    4   	2.000e+02	8.358e-01	8.755e-02	  -88.98°	  -89.16°
+    5   	2.500e+02	8.187e-02	8.577e-03	 -175.79°	 -175.97°
+    6   	3.000e+02	3.462e-01	3.627e-02	  -89.58°	  -89.76°
+    7   	3.500e+02	5.029e-02	5.268e-03	  179.35°	  179.18°
+    8   	4.000e+02	1.920e-01	2.011e-02	  -89.18°	  -89.35°
+    9   	4.500e+02	4.006e-02	4.196e-03	  173.43°	  173.25°
+   10   	5.000e+02	1.200e-01	1.258e-02	  -84.84°	  -85.01°
+Total Harmonic Distortion: 45.189539%(45.211801%)
+
+
+
+Date: Tue Aug 11 17:14:25 2020
+Total elapsed time: 0.330 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2184
+traniter = 2184
+tranpoints = 1068
+accept = 1059
+rejected = 9
+matrix size = 4
+fillins = 0
+solver = Normal
+Matrix Compiler1: 118 bytes object code size  0.3/0.3/[0.2]
+Matrix Compiler2: 242 bytes object code size  0.3/0.3/[0.3]
+
