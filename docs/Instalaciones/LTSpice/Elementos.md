@@ -492,13 +492,13 @@ En la tabla siguiente se describen estos parámetros.
 
 <center>
 
-| Parámetro | Descripción | Unidades |
-|:-:|---|:-:|
-| DC offset | Tensión continua de offset | V o A |
-| Amplitude | Amplitud de la señal | V o A |
-| Carrier Freq | Frecuencia de la portadora | Hz |
-| Modulation Index | Indice o coeficiente de modulación ||
-|Signal Freq | Frecuencia de la señal | Hz |
+| Parámetro | Símbolo | Descripción | Unidades |
+|:-:|:-:|---|:-:|
+| DC offset | DC | Tensión continua de offset | V o A |
+| Amplitude | A | Amplitud de la señal | V o A |
+| Carrier Freq | CF | Frecuencia de la portadora | Hz |
+| Modulation Index | MI | Indice o coeficiente de modulación ||
+|Signal Freq | SF | Frecuencia de la señal | Hz |
 
 </center>
 
@@ -519,10 +519,9 @@ La señal se describe por la siguiente ecuación:
 
 <center>
 
-Vfuente = DCoffset + Amplitude . sen(2PI.Carrier.t + Index . sen(2PI.Carrier.t)
+$V_{tuente}=DC+A\cdot sen\left( 2\pi \cdot CF\cdot t\right) +MI\cdot sen\left( 2\pi \cdot SF\cdot t\right)$
 
 </center>
-paso es renombrar nuestro diodo reemplazando D por 1N4002.escargar el ejemplo](../../Ejemplos/Elementos/E5-Fuente-SFFM.asc) y jugar con estos valores para controlar el funcionamiento de este tipo de fuente de excitación.
 
 ## Otros componentes
 
@@ -606,3 +605,147 @@ En la imagen 29 tenemos el resultado de obtener la corriente que circula por el 
 
 Podemos [descargar](../../Ejemplos/Elementos/E6-Curva-1N4007.asc) este ejemplo para su estudio.
 
+## Parámetros de modelos SPICE
+
+### Diodo
+
+<center>
+
+| Parámetro | Valor por defecto | Significado |
+|:-:|:-:|---|
+| IS | Corriente inversa de saturación | 0.01 pA |
+| N | Coeficiente de emisión | 1 |
+| ISR | Corriente de saturación de recombinación | 0 |
+| NR | Coeficiente de emisión para ISR | 2 |
+| IKF | Corriente codo | $\infty$ |
+| BV | Tensión de ruptura | $\infty$ |
+| IBV | Corriente para la tensión de ruptura | 1 nA |
+| NBV | Factor de la tensión de ruptura | 1 |
+| RS | Resistencia parásita | 0 |
+| TT | Tiempo de respuesta | 0 |
+| CJO | Capacidad de la unión PN sin polarizar | 0 |
+| VJ | Tensión de unión | 1 |
+| M | Coeficiente de unión | 0.5 |
+| EG | Energia del gap | 1.11 eV |
+| XTI | Exponente de la temperatura de IS | 3 |
+| KF | Coeficiente de ruido Flicker | 0 |
+| AF | Exponente de ruido Flicker | 1 |
+| FC | Coeficiente en polarización directa para CJ | 0.5 |
+
+</center>
+
+### Transistor
+
+<center>
+
+| Parámetro | Valor por defecto | Significado | Valor típico |
+|:-:|:-:|---|:-:|
+| IS | Corriente inversa de saturación | 1 fA | 1 fA |
+| BF | Valor de Beta | 100 | 100 |
+| NF | Coeficiente de emisión de la corriente directa | 1 | 1 |
+| VAF o VA | Tensión de Early directa | $\infty$ | 100 V |
+| IKF o IK | Corriente de codo | $\infty$ | 10 mA |
+| ISE | Corriente de saturación de pérdida B-E | 1000 A | 1000 A |
+| NE | Coeficiente de emisión de pérdida B-E | 1.5 | 2 |
+| BR | Valor de Beta inversa | 1 | 0.1 |
+| NR | Coeficiente de emisión para corriente inversa | 1 | - |
+| VAR o VB | Tensión de Early inversa | $\infty$ | 100 V |
+| IKR | Corriente de codo inversa | $\infty$ | 100 mA |
+| ISC | Corriente de saturación C-B | 0 | 1 A |
+| NC | Coeficiente de emisión de pérdida B-C | 2 | 2 |
+| NK | Coeficiente de alta corriente | 0.5 | - |
+| RE | Resistencia de emisor | 0 | 1 R |
+| RB | Resistencia de base | 0 | 100 R |
+| RC | Resistencia de colector | 0 | 10 R |
+| CJE | Capacidad unión B-E | 0 | 2 pF |
+| VJE | Tensión de unión B-E | 0.75 | 0.7 V |
+| MJE | Factor de graduación de la unión B-E | 0.33 | - |
+| CJC | Capacidad unión C-B | 0 | 1 pF |
+| VJC | Tensión unión B-C | 0.75 V | 0.5 V |
+| MJC | Factor de graduación de la unión B-C | 0.33 | - |
+| FC | Coeficiente capacidad de barrera | 0.5 | - |
+| TF | Tiempo de transición directo | 0 | 0.1 ns |
+| TR | Tiempo de transición inverso | 0 | 10 ns |
+| EG | Energia del gap | 1.11 eV | 1.11 eV |
+| XTI | Exponente de temperatura para IS | 3 | - |
+
+</center>
+
+## Subcircuitos
+
+Un subcircuito es un modelo de un componente o circuito que vamos a poder utilizar siempre que lo necesitemos y que estará representado por un símbolo. Es decir, va a funcionar de manera similar a un componente que vamos a crear nosotros mismos a partir de un circuito determinado.
+
+Para ilustrar el tema vamos a crear un sumador analógico basado en el amplificador operacional AD711. Realizamos las conexiones necesarias para obtener el esquema de la imagen 30.
+
+<center>
+
+| Imagen 30 |
+|:-:|
+| ![Esquema del sumador analógico](../../img/Elementos/i30.png) |
+| Esquema del sumador analógico |
+
+</center>
+
+En la imagen 31 tenemos la Netlist del circuito.
+
+<center>
+
+| Imagen 31 |
+|:-:|
+| ![Netlist del sumador analógico](../../img/Elementos/i31.png) |
+| Netlist del sumador analógico |
+
+</center>
+
+Una vez decidido el circuito pasamos a crear un símbolo para representarlo. Para ello accedemos a la orden *Create a New Symbol* del menú *Hierarchy*, tal y como se observa en la imagen 32.
+
+<center>
+
+| Imagen 32 |
+|:-:|
+| ![Acceso a *Create a New Symbol*](../../img/Elementos/i32.png) |
+| Acceso a *Create a New Symbol* |
+
+</center>
+
+Aparecerá una hoja de trabajo en la cual vamos a dibujar nuestro símbolo y lo vamos a dotar de patillas de conexión. Para realizar el dibujo disponemos de herramientas básicas de dibujo en el menú *Draw* (imagen 33a) y para colocar pines debemos colocar los puertos de conexión de entrada y de salida, que deberán ser iguales a los
+del circuito de la imagen 30 (V1, V2 y S). Esto lo hacemos desde la opción Add Pin/Port del menú Edit. En la imagen 33b vemos las opciones disponibles para los pines.
+
+Cuando el esquema tiene asociado un símbolo podemos abrirlo con la opción *Open this Sheet's Symbol* que vemos en la imagen 32. 
+
+<center>
+
+| Imagen 33a | Imagen 33b |
+|:-:|:-:|
+| ![Herramientas de dibujo disponibles](../../img/Elementos/i33a.png) |![Opciones para pines](../../img/Elementos/i33b.png) |
+| Herramientas de dibujo disponibles | Opciones para pines |
+
+</center>
+
+En nuestro caso hemos creados el símbolo que se observa en la imagen 34 que trata de indicar la tarea que realiza a la salida con las dos entradas.
+
+<center>
+
+| Imagen 34 |
+|:-:|
+| ![Símbolo creado para el sumador analógico](../../img/Elementos/i34.png) |
+| Símbolo creado para el sumador analógico |
+
+</center>
+
+Podemos [descargar](../../Ejemplos/Elementos/E7-sumador-analogico.asc) este ejemplo para el estudio de la creación de subcircuitos.
+
+A partir de este momento tenemos disponible el símbolo para su uso en esquemas, pero por conveniencia, lo he trasladado a un directorio propio creado dentro del directorio de librerias de LTSpice XVII y una vez indexado (reiniciando el programa) ya está disponible.
+
+Veamos un sencillo ejemplo de uso del símbolo creado. Vamos a hacer un sumador analógico para obtener como señal de salida la resultante de sumar una señal continua procedente de una bateria de 1V con otra sinusoidal de 2V de amplitud. En la imagen 35 vemos el resultado con las tres señales implicadas mostradas. Se observa cómo la salida en una señal sinusoidal de 2V de amplitud desplazada 1V en ordenadas y en fase con la sinusoide de entrada, es decir, el símbolo repreesenta un sumador analógico.
+
+<center>
+
+| Imagen 35 |
+|:-:|
+| ![Ejemplo básico de sumador analógico](../../img/Elementos/i35.png) |
+| Ejemplo básico de sumador analógico |
+
+</center>
+
+Podemos [descargar](../../Ejemplos/Elementos/E8-ejemplo-uso-simbolo-sumador.asc) este ejemplo para su estudio

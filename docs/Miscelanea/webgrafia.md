@@ -22,3 +22,5 @@
 * Canal Youtube de Francisco Márquez [FísicayMates](https://www.youtube.com/user/fisicaymates)
 
 * Convertidor online [MyScript](https://webdemo.myscript.com/) de ecuaciones escritas a mano alzada a formato [Latex](https://www.latex-project.org/).
+
+* [An Interactive Guide To The Fourier Transform](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/)

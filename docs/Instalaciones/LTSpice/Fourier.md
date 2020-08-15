@@ -483,64 +483,423 @@ En la imagen 7 tenemos representada la señal que entrega un rectificador de med
 
 | Imagen 7 |  |
 |:-:|:-:|
-| ![Señal de salida de un rectificador de media onda](../../img/Fourier/i7.png) | $\begin{aligned}\\\\\\0\leq t\leq T/2\rightarrow f\left( t\right) =V_{p}sen\omega t\\\\\\ T/2\leq t\leq T\rightarrow f\left( t\right) =0\end{aligned}$ |
+| ![Señal de salida de un rectificador de media onda](../../img/Fourier/i7.png) | $\begin{aligned}\\\\0 < t < \pi \rightarrow f\left( t\right) =V_{p}sen\omega t\\\\ \pi\leq t < {2\pi} \rightarrow f\left( t\right) =0 \\\\ T = {2\pi} \end{aligned}$ |
 | Señal de salida de un rectificador de media onda | Expresión matemática |
 
 </center>
 
-Observamos que:
+Observamos que se trata ade una función a trozos que podemos escribir como:
 
 <center>
 
-$T=2\pi\rightarrow f\left( t\right) =\dfrac{a_{0}}{2} + \sum ^{\infty }_{n=1}\left[ a_{n}\cos \left( nt\right) +b_{n}sen\left( nt\right) \right]$
+$f\left( t\right) =\dfrac{a_{0}}{2} + \sum ^{\infty }_{n=1}\left[ a_{n}\cos \left( nt\right) +b_{n}sen\left( nt\right) \right]$
 
 </center>
 
-Procedemos a calcular los coeficientes de Fourier.
-
-* Coeficiente a<sub>0</sub>
-
-Observamos que la función vale 0 la mitad del periodo luego podemos restringir el periodo de integración a la mitad del periodo, luego podemos escribir lo siguiente:
+Los coeficientes de Fourier vendrán dados por:
 
 <center>
 
-$a_{0}=\dfrac{1}{{\pi }}\int _{2\pi}f\left( t\right) dt=\dfrac{1}{\pi }\int _{0}^{\pi }V_{p}sen\left( nt\right) dt$
+$a_{0}=\dfrac{1}{{\pi }}\int _{2\pi}f\left( t\right) dt\hspace{3mm}=\hspace{3mm}\dfrac{1}{\pi }\int _{0}^{\pi }V_{p}sen\left( nt\right) dt$
 
 </center>
-
-Si resolvemos la integral inmediata podemos poner:
 
 <center>
 
-$\begin{aligned} a_{0}=-\dfrac{V_{p}}{\pi }\cos \left( nt\right) ] \dfrac{\pi }{\dfrac{}{0}}-\dfrac{V_{p}}{\pi }\left( \cos \pi -\cos \phi \right) = -\dfrac{V_{p}}{\pi }\left( -1-1\right) =\dfrac{2V_{p}}{\pi }=0.637V_{p}\end{aligned}$
+$a_{n}=\dfrac{1}{\pi}\int _{2\pi}f\left( t\right)\cdot\cos \left( nt\right) dt \hspace{3mm} = \hspace{3mm}\dfrac{1}{\pi }\int _{0}^{\pi }f\left( t\right)\cdot\cos\left( nt\right) dt$
 
 </center>
-
-* Coeficiente a<sub>n</sub>
-
-Volvemos a considerar el intervalo donde la función no es nula y escribimos:
 
 <center>
 
-$a_{n}=\dfrac{1}{\pi}\int _{2\pi}f\left( t\right) \cos \left( nt\right) dt =\dfrac{1}{\pi }\int _{0}^{\pi }f\left( t\right)cos\left( nt\right) dt$
+$b_{n}=\dfrac{1}{\pi}\int _{2\pi}f\left( t\right)\cdot sen \left( nt\right) dt\hspace{3mm} = \hspace{3mm}\dfrac{1}{\pi }\int _{0}^{\pi }f\left( t\right)\cdot sen\left( nt\right) dt$
 
 </center>
 
-Sustituimos f(t) por su valor y tenemos que:
+Sustituimos f(t) por su valor y podemos poner que:
 
 <center>
 
-$a_{n}=\dfrac{1}{\pi }\int _{0}^{\pi }V_{p}sen\left( nt\right) cos\left( nt\right)dt=\dfrac{V_{p}}{\pi }\int _{0}^{\pi }sen\left( nt\right) cos\left( nt\right)dt$
+$a_{n}=\dfrac{1}{\pi }\int _{0}^{\pi }V_{p}sen\left( nt\right) cos\left( nt\right)dt\\\\b_{n}=\dfrac{1}{\pi }\int _{0}^{\pi }V_{p}sen\left( nt\right) sen\left( nt\right)dt$
 
 </center>
 
-Se trata de una integral trigonométrica que se resuelve transformando el producto en suma. Podemos escribir que:
+Se trata de integrales trigonométrica que se resuelven transformando el producto en suma y recordando las identidades trigonométricas.
 
-
+Si realizamos un análisis en el tiempo (Transient) podemos obtener el espectro de una señal utilizando la siguiente sentencia:
 
 <center>
 
-
-$b_{n}=\dfrac{1}{\pi}\int _{2\pi}f\left( t\right) sen \left( nt\right) dt$
+.FOUR <frecuencia> [Numero de armónicos] <señal>
 
 </center>
+
+El número de armónicos es opcional y si no se introduce se calculan 9 por defecto.
+
+En la imagen 8 tenemos el circuito del rectificador de media onda con el análisis temporal configurado y la ventana de *Spice directive* con la sentencia que vamos a introducir para su análisis.
+
+| Imagen 8 |  |
+|:-:|:-:|
+| ![Rectificador de media onda y análisis temporal configurado](../../img/Fourier/i8a.png) | ![Ventana Spice directive](../../img/Fourier/i8b.png) |
+| Rectificador de media onda y análisis temporal configurado | Ventana Spice directive |
+
+</center>
+
+El resultado de la simulación está en un archivo de texto al que accedemos a través del menú *View → SPICE Error Log*, y para el caso que nos ocupa es el de la imagen 9.
+
+| Imagen 9 |
+|:-:|
+| ![Descomposición en la componente continua y sus armónicos](../../img/Fourier/i9.png) |
+| Descomposición en la componente continua y sus armónicos |
+
+</center>
+
+La primera columna de la tabla indica el número de armónico. La segunda columna indica la frecuencia del armónico de esa fila. La tercera indica la amplitud de cada armónico y la cuarta el valor normalizado, respecto del primer armónico. La quinta columna indica la fase de cada armónico y la sexta columna la fase normalizada. El valor de la componente contínua es *DC component*.
+
+## La transformada rápida de Fourier
+
+Normalmente conocida por la abreviatura FFT (del inglés Fast Fourier Transform).
+
+Aunque vamos a dar las ecuaciones base no vamos a entrar en profundidades de matemáticas, bastante complejas por otro lado, porque lo que tratamos es de que se entienda el concepto para poder analizar los resultados que nos devuelva LTSpice XVII. 
+
+La tranformada de Fourier convierte una señal expresada en el dominio del tiempo al dominio de la frecuencia. Ya vimos el concepto anteriormente y la ecuación que convierte la trayectoria en vectores es:
+
+<center>
+
+$\begin{aligned}X_{k}=\sum ^{N-1}_{n=0}x_{n}\cdot e^{-j2\pi k n/N}\end{aligned}$
+
+</center>
+
+Donde: 
+
+- $X_{k}$ es el valor de la frecuencia k de la señal. Cada k-ésimo valor es un complejo que incluye la amplitud y la fase.
+
+- N es el número de muestras.
+  
+- n es la muestra actual, con $n\in \left\{ 0\ldots N-1\right\}$
+
+- k es la frecuencia actual, entre 0 y N-1 Hz
+
+- n/N es el porcentaje de tiempo que ha pasado.
+
+- $2\pi k$ es la velocidad en radianes por segundo.
+
+- $e^{-jx}$ es el desarrollo de una trayectoria circular en sentido antihorario.
+
+La función FFT() devuelve esos $X_{k}$
+
+Una transformada inversa de Fourier convierte el dominio de la frecuencia en el originario dominio temporal. La ecuación matemática que realiza esta operación es:
+
+<center>
+
+$\begin{aligned}x_{n}=\dfrac{1}{N}\sum ^{N-1}_{k=0}X_{k}\cdot e^{j2\pi k n/N}\end{aligned}$
+
+</center>
+
+Vamos a hacernos una serie de preguntas dando sus respuestas en torno a algo que conocemos mucho mejor que estas ecuaciones. Vamos a usar una receta de arroz con leche como simil.
+
+<center>
+
+| Pregunta real | Respuesta utilizando la receta |
+|---|---|
+| ¿Qué hace la transformada de Fourier? | A partir del arroz con leche encuentra su receta |
+| ¿Cómo encuentra la receta? | Utiliza filtros para separar los ingredientes: arroz, leche, canela y azúcar |
+| ¿Por que es útil tener la receta? | Es mas fácil de analizar, comparar y modificar que el postre en si |
+| ¿Cómo recuperamos el arroz con leche? | Mezclando los ingredientes |
+
+</center>
+
+Podemos imaginar los ingredientes como señales con la forma de onda básica y el arroz con leche como una serie temporal compleja.
+
+Técnicamente podemos decir que la transformada de Fourier toma un patrón basado en el tiempo, mide cada ciclo posible y devuelve la "receta de ciclo" general, o sea la amplitud, el desfase y la frecuencia para cada ciclo que encontró.
+
+Una serie temporal es, en el fondo, la suma de muchas ondas como las que ya hemos visto y que tienen la forma típica de un *sin(x) o cos(x)*.
+
+Pues bien, la máquina capaz de obtener los ingredientes la podemos asemejar a la transformada de Fourier que nos permite:
+
+* Pasar de una serie temporal complicada a una suma de ondas simples.
+
+* Dibujar esto en un diagrama de frecuencias. Utilizando la frecuencia como medida para diferenciar las diferentes ondas.
+
+Este diagrama se conoce como espectro de frecuencias o mapa de frecuencias y permite ver a simple vista el contenido de las ondas resultado de utilizar la transformada de Fourier. Ya vimos que una serie temporal la puedes pasar a una gráfico en frecuencia.
+
+## Ejemplos
+
+### Circuito RLC para mostrar FFT
+
+Vamos a analizar el circuito de la imagen 10 dando los valores adecuados a los componentes, configurando la fuente V1 con los parámetros que se indican y el análisis transitorio que se muestra.
+
+<center>
+
+| Imagen 10 |
+|:-:|
+| ![Circuito y configuraciones de V1 y análisis](../../img/Fourier/i10.png) |
+| Circuito y configuraciones de V1 y análisis |
+
+</center>
+
+Una vez completado el trabajo de la imagen 10 procedemos con la ejecución del análisis y tras unos instantes estarán realizados los cálculos y podemos añadir una sonda de tensión para mostrar la señal de salida. En la animación siguiente observamos este proceso.
+
+<center>
+
+![Señal de salida del circuito RLC](../../img/Fourier/Mostrar-salida-RLC.gif)
+
+</center>
+
+Teniendo seleccionada la traza podemos acceder a FFT de cualquiera de la formas que vemos en la imagen 11.
+
+<center>
+
+| Imagen 11 |
+|:-:|
+| ![Formas de acceso a FFT](../../img/Fourier/i11.png) |
+| Formas de acceso a FFT |
+
+</center>
+
+Si accedemos a FFT y escogemos la señal indicada en la imagen 12 generamos la FFT inicial que vemos en la imagen 13.
+
+<center>
+
+| Imagen 12 |
+|:-:|
+| ![Selección de señal para añadir a FFT](../../img/Fourier/i12.png) |
+| Selección de señal para añadir a FFT |
+
+</center>
+
+Vemos que la transformada que se genera es poco legible debido a la configuración de los ejes de coordenadas por defecto.
+
+<center>
+
+| Imagen 13 |
+|:-:|
+| ![FFT inicial](../../img/Fourier/i13.png) |
+| FFT inicial |
+
+</center>
+
+En la siguiente animación vemos como reconfigurar los ejes para tener un espectro mas legible. El eje de ordenadas lo transformamos en lineal y cambiamos el rango del eje de abcisas para destacar los valores mas importantes.
+
+<center>
+
+![Modificación de los ejes en la FFT para una mejor visualización](../../img/Fourier/cambio-configuracion-ejes.gif)
+
+</center>
+
+### Directiva .options
+
+Permite cambiar determinadas opciones para ajustar el control del programa, como controlar la salida, el tipo de análisis, etc. La sintaxis es `.OPTIONS opc1 opc2 ...`. En la tabla siguiente las tenemos especificadas.
+
+| Opción | Tipo de dato | Valor por defecto | Descripción |
+|:-:|:-:|:-:|---|
+| abstol | Número | 1 pA | Tolerancia absoluta de corriente | 
+| baudrate | Número | Ninguno | Se usa para diagramas de ojo en cronogramas. Indica como ajustar el tiempo de abcisas para superponer los bits de transición |
+| chgtol | Número | 10fC | Tolerancia absoluta de carga |
+| cshunt | Número | 0 | Capacidad opcional añadida desde cada nodo a masa |
+| cshuntintern | Número | cshunt | Capacidad opcional añadida desde cada nodo interno de dispositivo a masa |
+| defad | Número | 0 | Área de difusión de drenaje MOS predeterminada |
+| defas | Número | 0 | Área de difusión de fuente MOS predeterminada |
+| defl | Número | 100µm | Longitud predeterminada del canal fuente MOS |
+| defw | Número | 100µm | Anchura predeterminada del canal MOS |
+| delay | Número | 0 | Cambia las transiciones de bits en el diagrama de ojo |
+| fastaccess | flag | false | Convierte a formato de archivo de acceso rápido al final de la simulación |
+| flagloads | flag | false | Marca las fuentes de corriente externas como cargas |
+| Gmin | Número | 1e-12 | Conductancia agregada a cada unión PN para ayudar a la convergencia |
+| gminsteps | Número | 25 | Poner a cero para prevenir gminstepping en la solución inicial en continua |
+| gshunt | Número | 0 | Conductancia opcional añadida entre cada nodo y masa |
+| itl1 | Número | 100 | Límite de iteraciones DC |
+| itl2 | Número | 50 | Límite de iteraciones de la curva de transferencia en continua |
+| itl4 | Número | 10 | Límite de iteraciones en análisis transitorio |
+| itl6 | Número | 25 | Poner a cero para prevenir source stepping en el análisis incial DC |
+| srcsteps | Número | 25 | Nombre alternativo de itl6 |
+| maxclocks | Número | Infinito | Máximo número de ciclos de reloj a salvar |
+| maxstep | Número | Infinito | Máximo tamaño de pasos para análisis transitorio |
+| meascplxfmt | string | bode | Formato de número complejo de los resultados de la instrucción .meas. Uno entre "polar", "cartesiano" o "bode" |
+| measdgt | Número | 6 | Número de figuras significativas usadas para .measure |
+| method | string | trap | Método de integración numérica. Puede ser trapezoidal o Gear |
+| minclocks | Número | 10 | Número mínimo de ciclos de reloj hasta salvar |
+| MinDeltaGmin | Número | 1e-4 | Establece un limite para finalizar gmin |
+| nomarch | flag | false | No dibujar formas de onda |
+| noopiter | flag | false | Ir a la directiva gmin directamente |
+| numdgt | Número | 6 | Históricamente, "numdgt" se usa para establecer el número de cifras significativas utilizadas para los datos de salida. En LTspice, si "numdgt" se establece mayor que 6, se usa doble precisión para datos de variables dependientes |
+| pivrel | Número | 1e-3 | Relación relativa entre la entrada más alta de columna y un valor de cambio aceptable |
+| pivtol | Número | 1e-13 | Valor mínimo absoluto para que una entrada de matriz se acepte |
+| reltol | Número | .001 | Tolerancia de error relativa |
+| srcstepmethod | Número | 0 | Con qué algoritmo de pasos fuente empezar |
+| sstol | Número | .001 | Error relativo para detección de estado estable |
+| startclocks | Número | 5 | Número de ciclos de reloj a esperar para considerar estado estable |
+| temp | Número | 27°C | Temperatura por defecto para los elementos del circuito que no especifican temperatura en sus parámetros |
+| tnom | Número | 27°C | Temperatura predeterminada a la que se midieron los parámetros del dispositivo para los modelos que no especifican esta temperatura  |
+| topologycheck | Número | 1 | Establecer en cero para omitir la verificación de nodos flotantes, bucles de fuentes de tensión y topología de devanado de transformador no físico |
+| trtol | Número | 1.0 | Tolerancia a errores transitorios |
+| trytocompact | Número | 1 | Cuando es distinto de cero, el simulador intenta condensar el historial de tensiones y corrientes de entrada de las líneas de transmisión |
+| vntol | Número | 1µV | Valor absoluto de la tolerancia de error de tensión |
+| plotreltol | Número | .0025 | Establece el error de tolerancia relativa para la compresión de formas de onda |
+| plotvntol | Número | 10µV | Establece el error absoluto de tensión para compresión de formas de onda |
+| plotabstol | Número | 1nA | Establece el error absoluto de corriente para compresión de formas de onda |
+| plotwinsize | Número | 300 | Número de puntos de datos para comprimir en una ventana. Cero para deshabilitar la compresión |
+| ptrantau | Número | .1 | Tiempo de inicio característico para un análisis pseudo transitorio para encontrar el punto de trabajo. Cero para deshabilitar |
+| ptranmax | Número | 0 | Si se establece en un valor distinto de cero, el tiempo del análisis pseudo transitorio se utiliza como punto de trabajo se haya estabilizado el circuito o no |
+
+En la imagen 14 tenemos un circuito con directivas `options` y su señal de salida representada en el dominio del tiempo.
+
+<center>
+
+| Imagen 14 |
+|:-:|
+| ![Directivas `.options` y análisis de Fourier](../../img/Fourier/i14.png) |
+| Directivas `.options` y análisis de Fourier |
+
+</center>
+
+En la imagen 15 tenemos la FFT.
+
+<center>
+
+| Imagen 15 |
+|:-:|
+| ![Transformada de Fouerier](../../img/Fourier/i15.png) |
+| Transformada de Fouerier |
+
+</center>
+
+En la imagen 16 vemos los resultados de la simulación con los datos de las componentes de Fourier mas destacados.
+
+<center>
+
+| Imagen 16 |
+|:-:|
+| ![View --> Spice Error Log](../../img/Fourier/i16.png) |
+| View --> Spice Error Log |
+
+</center>
+
+## Reconstrucción de señales a partir de la FFT
+
+A partir de datos como los de la imagen 16 es posible reconstruir la señal con el desarrollo inverso de la FFT. Para ver como hacerlo vamos a partir de un circuito tan simple como un generador de señal cuadrada o tren de pulsos del que vamos a obtener su FFT y después vamos a ir reconstruyendo la señal a partir de los términos de Fourier.
+
+Montamos el circuito de la imagen 17 y realizamos el análisis para obtener la señal de salida.
+
+<center>
+
+| Imagen 17 |
+|:-:|
+| ![Generador de tren de pulsos](../../img/Fourier/i17.png) |
+| Generador de tren de pulsos |
+
+</center>
+
+En la imagen 18 tenemos las componentes de Fourier que se han calculado. Hemos destacado los datos que vamos a usar para reconstruir la señal.
+
+<center>
+
+| Imagen 18 |
+|:-:|
+| ![Componentes de Fourier del generador de tren de pulsos](../../img/Fourier/i18.png) |
+| Componentes de Fourier del generador de tren de pulsos |
+
+</center>
+
+A continuación expresamos los datos anteriores que nos interesan.
+
+<center>
+
+| Componente de corriente continua: 2.505 V | |||
+|:-:|:-:|:-:|:-:|
+| Armónico | Frecuencia (kHz) | Componente de Fourier | Fase (°) |
+| A1 | 1 | 3.183 V | -0.36 |
+| A2 | 2 | 0.01 V | 89.64 |
+| A3 | 3 | 1.061 V | -1.08 |
+| A4 | 4 | 0.01 V | 88.56 |
+| A5 | 5 | 0.6365 V | -1.44 |
+| A6 | 6 | 9.999 mV | 88.20 |
+| A7 | 7 | 0.4546 V | -2.16 |
+| A8 | 8 | 9.999 mV | 87.12 |
+| A9 | 9 | 0.3535 V | -3.24 |
+| A10 | 10 | 9.997 mV | 86.4 |
+
+</center>
+
+El sistema genera una distorsión armónica total del 42.879828% (48.172792%)
+
+Podemos [descargar](../../Ejemplos/Fourier/E4-tren-pulsos.asc) este ejemplo para su estudio
+
+Tomando los valores de la tensión continua y los de los armónicos vamos a reconstruir la señal original. Para ello vamos a utilizar las fuentes de tensión necesarias y sumadores analógicos que permitan ir sumando las mismas y obtener la señal correspondiente al armónico. Vamos a comenzar por reconstruir la componente continua y los dos primeros armónicos para lo que construimos el circuito que vemos en la imagen 19.
+
+<center>
+
+| Imagen 19 |
+|:-:|
+| ![Reconstrucción de la componente continua y los armónicos 1 y 2](../../img/Fourier/i19.png) |
+| Reconstrucción de la componente continua y los armónicos 1 y 2 |
+
+</center>
+
+Observese como se han compuesto las señales con los valores de la tabla anterior. Las señales medidas en los puntos A1, A2 y A3, que corresponden a los tres primeros armónicos las vemos en la imagen 20. Observamos como a partir del segundo armónico la señal comienza a parecerse a una cuadrada.
+
+<center>
+
+| Imagen 20 |
+|:-:|
+| ![Señales en A1, A2 y A3](../../img/Fourier/i20.png) |
+| Señales en A1, A2 y A3 |
+
+</center>
+
+Esta parte la podemos [descargar](../../Ejemplos/Fourier/E5-1-Arm1-2-3.asc) este ejemplo para su estudio
+
+De forma similar a la anterior reconstruimos los armónicos 4, 5 y 6 obteniendo las gráficas y el circuito que vemos en la imagen 21.
+
+<center>
+
+| Imagen 21 |
+|:-:|
+| ![Reconstrucción armónicos 1 al 6](../../img/Fourier/i21.png) |
+| Reconstrucción armónicos 1 al 6 |
+
+</center>
+
+Esta parte la podemos [descargar](../../Ejemplos/Fourier/E5-2-Arm1-a-6.asc) este ejemplo para su estudio
+
+De forma similar a la anterior reconstruimos los armónicos 7 al 10 obteniendo las gráficas y el circuito que vemos en la imagen 22.
+
+<center>
+
+| Imagen 22 |
+|:-:|
+| ![Reconstrucción armónicos 7 al 10](../../img/Fourier/i22.png) |
+| Reconstrucción armónicos 7 al 10 |
+
+</center>
+
+Podemos [descargar](../../Ejemplos/Fourier/E5-Reconstruccion.asc) este ejemplo para su estudio
+
+Finalmente añadimos un puerto Salida al circuito y el mismo análisis de Fourier que al circuito original y obtenemos los resultados que vemos en la imagen 23.
+
+<center>
+
+| Imagen 23 |
+|:-:|
+| ![Reconstrucción de 10 armónicos](../../img/Fourier/i23.png) |
+| Reconstrucción de 10 armónicos |
+
+</center>
+
+En la tabla siguiente repetimos los datos anteriores e incluimos los correspondientes a la reconstrucción para su comparación.
+
+| Componente de corriente continua: 2.505 V | |||Componente de corriente continua: 2.50477 V | |||
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Armónico | Frecuencia (kHz) | Componente de Fourier | Fase (°) |  | Componente de Fourier | Fase (°) |
+| A1 | 1 | 3.183 V | -0.36 || 3.182 V | -0.96 |
+| A2 | 2 | 0.01 V | 89.64 ||| 9.991 mV | 88.07 |
+| A3 | 3 | 1.061 V | -1.08 || 1.060 V | -2.51 |
+| A4 | 4 | 0.01 V | 88.56 || 9.980 mV | 86.19 |
+| A5 | 5 | 0.6365 V | -1.44 || 0.6349 V | -3.22 |
+| A6 | 6 | 9.999 mV | 88.20 || 9.960 mV | 85.60 |
+| A7 | 7 | 0.4546 V | -2.16 || 0.4525 V | -3.83 |
+| A8 | 8 | 9.999 mV | 87.12 || 9.932 mV | 84.87 |
+| A9 | 9 | 0.3535 V | -3.24 || 0.3509 V | -4.31 |
+| A10 | 10 | 9.997 mV | 86.4 || 9.902 mV | 85.12 |
+
+Observamos como las diferencias son lo suficientemente pequeñas como para poder decir que la señal ha quedado reconstruida de forma fiable.

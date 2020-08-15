@@ -616,16 +616,3 @@ En la imagen 34 tenemos las curvas del diodo 1N4007 obtenidas a las diferentes t
 </center>
 
 Podemos [descargar](../../Ejemplos/Tipos/E5-temperatura-1N4007.asc) este ejemplo para su estudio.
-
-
-
-Meter lo de cambiar un solo componente con .model
-**********************************
-<center>
-
-| Imagen 1 |
-|:-:|
-| ![]() |
-| |
-
-</center>
