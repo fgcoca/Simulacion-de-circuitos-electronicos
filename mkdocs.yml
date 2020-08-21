@@ -31,7 +31,10 @@ nav:
       - Elementos de circuito: Instalaciones/LTSpice/Elementos.md
       - Tipos de análisis: Instalaciones/LTSpice/Tipos-analisis.md
       - Análisis de Fourier: Instalaciones/LTSpice/Fourier.md
-      - Mas conceptos de simulación: Mas-conceptos.md
+      - Mas conceptos de simulación: Instalaciones/LTSpice/Mas-conceptos.md
+      - Reflexión: ref.md
+    - KiCAD:
+      
   - Miscelanea:
     - Autor: Miscelanea/about.md 
     - Licencias: Miscelanea/lic.md

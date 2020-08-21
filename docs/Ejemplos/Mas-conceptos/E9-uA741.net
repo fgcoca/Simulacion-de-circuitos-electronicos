@@ -1,0 +1,15 @@
+* E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\Mas-conceptos\E9-uA741.asc
+V1 V+ 0 15V
+V2 V- 0 -15V
+V3 ent 0 SINE(0 1.5V 1kHz) Rser=50
+XU1 0 N001 V+ V- sal uA741
+R1 sal N001 10k
+R2 N001 ent 1k
+RL sal 0 10k
+C1 sal 0 100p
+.TEMP 25
+;tran 5u
+.ac dec 10 100Hz 2MEGHz
+.lib Z:\home\fede\Documentos\LTspiceXVII\lib\sym\Mis_Componentes\uA741.sub
+.backanno
+.end
