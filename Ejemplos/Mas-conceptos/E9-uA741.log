@@ -1,0 +1,23 @@
+Circuit: * E:\git\Simulacion-de-circuitos-electronicos\docs\Ejemplos\Mas-conceptos\E9-uA741.asc
+
+No AC stimulus found:
+     Set the value of a current or voltage source to "AC 1."
+     to make it behave as a signal generator for AC analysis.
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Aug 21 18:59:55 2020
+Total elapsed time: 0.228 seconds.
+
+tnom = 27
+temp = 25
+method = trap
+totiter = 13
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 35
+fillins = 42
+solver = Normal
+Matrix Compiler1:     191 opcodes
+Matrix Compiler2: 3.55 KB object code size
