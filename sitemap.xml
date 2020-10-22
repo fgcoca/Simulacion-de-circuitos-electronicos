@@ -1,55 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/wine/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/LTSpice/Ins-LTSpice/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Ejemplos/explicacion/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/LTSpice/Elementos/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/LTSpice/Tipos-analisis/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/LTSpice/Fourier/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/LTSpice/Mas-conceptos/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Instalaciones/LTSpice/ref/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/kc-intro/</loc>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/resumen-manual/</loc>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/red-rc/</loc>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/sonda-ajustar/</loc>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/ampl-bip/</loc>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/opamp/</loc>
+     <lastmod>2020-10-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/KiCAD/temp-555/</loc>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Miscelanea/about/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Miscelanea/lic/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Miscelanea/webgrafia/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://fgcoca.github.io/Simulacion-de-circuitos-electronicos/Miscelanea/soft/</loc>
-     <lastmod>2020-08-22</lastmod>
+     <lastmod>2020-10-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
