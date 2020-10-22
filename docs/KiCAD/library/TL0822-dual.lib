@@ -1,0 +1,7 @@
+* Modelo ngspice de amplificador operacional dual
+* nombre del archivo: TL0822-dual.lib
+.subckt TL082 1OUT 1IN- 1IN+ Vcc- 2IN+ 2IN- 2OUT Vcc+
+.include TL082.301
+XU1A 1IN+ 1IN- Vcc+ Vcc- 1OUT TL082
+XU1B 2IN+ 2IN- Vcc+ Vcc- 2OUT TL082
+.ends

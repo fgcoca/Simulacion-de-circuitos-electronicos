@@ -29,3 +29,6 @@
 
 * [Github de Sebastian Stay](https://gist.github.com/s-estay)
 
+* [Manual de ngspice](http://ngspice.sourceforge.net/docs/ngspice-manual.pdf) obtenido del [sumario](http://ngspice.sourceforge.net/tutorials.html) de tutoriales de ngspice de [Sourceforge.net](https://sourceforge.net/)
+
+* Ejemplos tomados de [Tutorial: ngspice simulation in KiCad/Eeschema](http://ngspice.sourceforge.net/ngspice-eeschema.html)

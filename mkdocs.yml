@@ -32,9 +32,15 @@ nav:
       - Tipos de análisis: Instalaciones/LTSpice/Tipos-analisis.md
       - Análisis de Fourier: Instalaciones/LTSpice/Fourier.md
       - Mas conceptos de simulación: Instalaciones/LTSpice/Mas-conceptos.md
-      - Reflexión: ref.md
-    - KiCAD:
-      
+      - Reflexión: Instalaciones/LTSpice/ref.md
+  - KiCAD:
+    - Introducción: KiCAD/kc-intro.md
+    - Resumen de fuentes de excitación y tipos de análisis: KiCAD/resumen-manual.md
+    - Red RC básica: KiCAD/red-rc.md
+    - Elementos Sonda y Ajustar del simulador: KiCAD/sonda-ajustar.md
+    - Amplificador con transistor bipolar: KiCAD/ampl-bip.md
+    - Amplificadores operacionales: KiCAD/opamp.md
+    - Temporizador 555: KiCAD/temp-555.md
   - Miscelanea:
     - Autor: Miscelanea/about.md 
     - Licencias: Miscelanea/lic.md
